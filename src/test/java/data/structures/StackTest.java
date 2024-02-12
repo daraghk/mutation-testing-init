@@ -17,11 +17,15 @@ class StackTest {
 
     @Test
     void pushPastCapacity() {
-        var stack = new Stack(0);
+        var stack = new Stack(1);
+        stack.push(5);
+        assertEquals(stack.getCapacity(), stack.getCurrentSize());
+
         Exception exception = assertThrows(RuntimeException.class,
                 () -> {
                     stack.push(5);
                 });
+
         assertEquals(RuntimeException.class, exception.getClass());
     }
 
