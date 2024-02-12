@@ -17,8 +17,8 @@ public class Stack {
     }
 
     public void push(int newValue) throws RuntimeException {
-       var newTopPosition = this.topPosition + 1;
-       if (newTopPosition > this.capacity) {
+       var newSize = this.currentSize + 1;
+       if (newSize == capacity) {
            throw new RuntimeException();
         }
        else {
