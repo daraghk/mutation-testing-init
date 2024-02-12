@@ -51,6 +51,10 @@ public class Stack {
         }
     }
 
+    public int getTopPosition() {
+        return topPosition;
+    }
+
     public int getCurrentSize() {
         return currentSize;
     }

@@ -41,6 +41,7 @@ class StackTest {
         assertTrue(popped.isPresent());
         assertEquals(popped.get(), 5);
         assertEquals(stack.getCurrentSize(), 0);
+        assertEquals(stack.getTopPosition(), 0);
 
         // Try to pop an element from the empty stack
         var poppedAgain = stack.pop();
