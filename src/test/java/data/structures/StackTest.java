@@ -1,4 +1,4 @@
-package org.example;
+package data.structures;
 
 import org.junit.jupiter.api.Test;
 

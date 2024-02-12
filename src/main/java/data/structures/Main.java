@@ -1,4 +1,4 @@
-package org.example;
+package data.structures;
 
 import java.util.Optional;
 
