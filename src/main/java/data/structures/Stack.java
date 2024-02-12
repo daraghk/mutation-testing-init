@@ -24,6 +24,7 @@ public class Stack {
        else {
            this.stackBuffer.add(newValue);
            this.currentSize++;
+           this.topPosition = this.currentSize - 1;
        }
     }
 

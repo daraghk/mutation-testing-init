@@ -35,17 +35,33 @@ class StackTest {
         assertTrue(peeked.isPresent());
         assertEquals(peeked.get(), 5);
         assertEquals(stack.getCurrentSize(), 1);
+        assertEquals(stack.getTopPosition(), 0);
 
-        // Pop added element from the stack
+        // Add second element to the stack
+        stack.push(6);
+        var peekedAgain = stack.peek();
+        assertTrue(peekedAgain.isPresent());
+        assertEquals(peekedAgain.get(), 6);
+        assertEquals(stack.getCurrentSize(), 2);
+        assertEquals(stack.getTopPosition(), 1);
+
+        // Pop second added element from the stack
         var popped = stack.pop();
         assertTrue(popped.isPresent());
-        assertEquals(popped.get(), 5);
+        assertEquals(popped.get(), 6);
+        assertEquals(stack.getCurrentSize(), 1);
+        assertEquals(stack.getTopPosition(), 0);
+
+        // Pop first added element from the stack
+        var poppedAgain = stack.pop();
+        assertTrue(poppedAgain.isPresent());
+        assertEquals(poppedAgain.get(), 5);
         assertEquals(stack.getCurrentSize(), 0);
         assertEquals(stack.getTopPosition(), 0);
 
         // Try to pop an element from the empty stack
-        var poppedAgain = stack.pop();
-        assertTrue(poppedAgain.isEmpty());
+        var poppedAgainAgain = stack.pop();
+        assertTrue(poppedAgainAgain.isEmpty());
         assertEquals(stack.getCurrentSize(), 0);
     }
 
