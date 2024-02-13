@@ -7,7 +7,7 @@ public class Stack {
     private int capacity;
     private int currentSize;
     private int topPosition;
-    private final ArrayList<Integer> stackBuffer;
+    private ArrayList<Integer> stackBuffer;
 
     Stack(int capacity){
         this.capacity = capacity;
